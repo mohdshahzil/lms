@@ -10,11 +10,10 @@ import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import brevoAdapter from './utils/brevoAdapter'
-
+import { Customers } from './collections/Customers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
 
 export default buildConfig({
   admin: {
@@ -23,8 +22,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  email : brevoAdapter(),
-  collections: [Users, Media],
+  email: brevoAdapter(),
+  collections: [Users, Media, Customers],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
