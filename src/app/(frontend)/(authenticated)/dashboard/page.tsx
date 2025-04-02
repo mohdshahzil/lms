@@ -1,7 +1,15 @@
-import React from 'react'
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return <div>Dashboard</div>
+export default function Dashboard() {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen">
+      <SignedIn>
+        <h1>Welcome to the Dashboard!</h1>
+        <UserButton  />
+      </SignedIn>
+
+      
+    </div>
+  );
 }
-
-export default page
